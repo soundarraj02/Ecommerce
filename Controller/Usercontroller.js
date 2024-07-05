@@ -15,4 +15,4 @@ exports.login = async(req,res) => {
     } catch(e) {
         res.send({status:false, message:"error occurred"});
     }
-}
+} 
