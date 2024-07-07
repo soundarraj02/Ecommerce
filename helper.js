@@ -2,7 +2,6 @@ const jwt = require('jwt-simple')
 
 exports.requiresAuth = async (req,res,next) =>{
     try{
-        console.log("hi")
         const idToken = req.header("Authorization");
         if(!idToken) {
             return res.status(400).json({status:'error', message:'token not found'})
@@ -10,7 +9,6 @@ exports.requiresAuth = async (req,res,next) =>{
         const bearer = idToken.split(' ');
         const token = bearer[1];
         let decoded = jwt.decode(token,'soundar@02');
-        console.log(decoded)
         req.user=decoded;
         next();
     } catch(e) {
