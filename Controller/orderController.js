@@ -27,7 +27,7 @@ exports.placeOrder = async(req,res) => {
     }else{
         res.send({status:false,message:"product out of stock"})
     }
-    } catch(e) {
+    } catch(e) { 
         console.log(e)
         res.send({status:false, message:"error occurred"});
     }
